@@ -3,7 +3,8 @@
 ### Used technologies
 
 * Java Virtual Threads (Java 21)
-* JDBC Client (PostgreSQL)
+* Docker
+* PostgreSQL
 
 
 ### SetUp

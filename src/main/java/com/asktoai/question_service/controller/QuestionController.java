@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.ExecutionException;
+
 @RestController
 @RequestMapping("/askmeanything")
 public class QuestionController {
@@ -21,7 +23,7 @@ public class QuestionController {
     @PostMapping(value = "/question")
     public ResponseEntity<Answer> askQuestion(
             @RequestBody String question
-    ) {
+    ) throws ExecutionException, InterruptedException {
         return ResponseEntity.ok(chatService.getAnswerFromGemini(question));
     }
 

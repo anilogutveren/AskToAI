@@ -5,12 +5,14 @@
 * Java Virtual Threads (Java 21)
 * Docker
 * PostgreSQL
+* OpenAI
 
 
 ### SetUp
 
 * Clone the repository
 * Run docker compose
+* Set the env variables in your IDE (OpenAI API key)
 * Import the Postman collection in the project
 * Run the project
 

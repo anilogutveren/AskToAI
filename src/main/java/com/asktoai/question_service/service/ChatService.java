@@ -41,7 +41,7 @@ public class ChatService {
 
         var combinedAnswer = new Answer("");
 
-        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+        try (var executor = Executors.newThreadPerTaskExecutor(Thread.ofVirtual().name("OpenAI-Thread", 1).factory())) {
             var answerInEnglish = fetchAnswer(promptEnglish, executor);
             var answerInTurkish = fetchAnswer(promptTurkish, executor);
 
@@ -58,7 +58,7 @@ public class ChatService {
     private CompletableFuture<Answer> fetchAnswer(Prompt prompt, Executor executor) {
 
         return CompletableFuture.supplyAsync(() -> {
-                    log.info("Getting answer from Gemini with executor thread: ");
+                    log.info("Getting answer from OpenAI with executor thread: ");
                     return new Answer(chatClient.call(prompt).getResult().getOutput().getContent());
                 }, executor)
                 .exceptionally(ex -> {

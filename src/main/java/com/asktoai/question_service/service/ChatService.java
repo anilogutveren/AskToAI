@@ -55,7 +55,7 @@ public class ChatService {
         return combinedAnswer;
     }
 
-    private CompletableFuture<Answer> fetchAnswer(Prompt prompt, Executor executor) {
+        private CompletableFuture<Answer> fetchAnswer(Prompt prompt, Executor executor) {
 
         return CompletableFuture.supplyAsync(() -> {
                     log.info("Getting answer from OpenAI with executor thread: ");

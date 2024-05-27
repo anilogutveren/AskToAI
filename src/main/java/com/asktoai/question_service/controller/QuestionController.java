@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMapping("/askmeanything")
+@RequestMapping("/virtualthread")
 public class QuestionController {
 
     private final ChatService chatService;
@@ -25,7 +25,7 @@ public class QuestionController {
         this.virtualThreadTestService = virtualThreadTestService;
     }
 
-    @PostMapping(value = "/question/virtualthread")
+    @PostMapping(value = "/question")
     public ResponseEntity<Answer> askQuestionToVirtualThread(
             @RequestBody String question
     ) throws ExecutionException, InterruptedException {
@@ -38,8 +38,5 @@ public class QuestionController {
     ){
         return ResponseEntity.ok(chatService.getAnswersFromOpenAi(question));
     }
-
-
-
 
 }

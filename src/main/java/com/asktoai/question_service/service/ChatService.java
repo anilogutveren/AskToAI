@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -20,11 +21,10 @@ public class ChatService {
 
     private final ChatClient chatClient;
 
-    private final DbService dbService;
+    private Semaphore semaphore = new Semaphore(2);
 
-    public ChatService(@Qualifier("openAiChatClient") ChatClient chatClient, DbService dbService) {
+    public ChatService(@Qualifier("openAiChatClient") ChatClient chatClient) {
         this.chatClient = chatClient;
-        this.dbService = dbService;
     }
 
     /**

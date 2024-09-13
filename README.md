@@ -16,6 +16,29 @@
 * Import the Postman collection in the project
 * Run the project
 
+### Docker Compose
+
+In Docker compose file, you will find the following services:
+1-PostgreSQL DB
+2-Ollama
+3-Open WebUI
+
+Ollama helps running with large language models.
+With Ollama we can run the following commands:
+By this way Ollama service will start and run the command llama3 LLM model. 
+This model will give us the answers for chat service.  
+After starting all the services in docker-compose, we should execute following command:
+```shell
+docker exec -it ollama ollama run llama3
+```
+
+![img.png](img.png)
+
+Open WebUI for chat:
+We mus first Register and then Login to the chat service.
+Localhost icin de registration yapilmali
+![img_1.png](img_1.png)
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 

@@ -1,6 +1,7 @@
 package com.asktoai.question_service.repository;
 
 
+/*
 import lombok.Generated;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -25,3 +26,4 @@ public class ChatEntity {
     @Column
     private String question;
 }
+*/

@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto-21
+      java: corretto21
   pre_build:
     commands:
       - echo "Setting Java 21 as default"

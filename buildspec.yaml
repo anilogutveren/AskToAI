@@ -1,8 +1,19 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto-21
+    commands:
+      - echo "Installing Java 21"
+      - sudo yum remove -y java-1.8.0-openjdk
+      - sudo yum install -y java-21-amazon-corretto-devel
   pre_build:
     commands:
+      - echo "Setting Java 21 as default"
+      - export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto
+      - export PATH=$JAVA_HOME/bin:$PATH
+      - java -version # To verify Java 21 is active
       - mvn clean install
       - echo Logging in to Amazon ECR...
       - aws --version

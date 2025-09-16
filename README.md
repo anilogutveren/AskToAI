@@ -39,6 +39,8 @@ We mus first Register and then Login to the chat service.
 Localhost icin de registration yapilmali
 ![img_1.png](img_1.png)
 
+Open Web UI yerine AnythingLLM de kullanilabilir. 
+![img_2.png](img_2.png)
 ### Reference Documentation
 For further reference, please consider the following sections:
 
